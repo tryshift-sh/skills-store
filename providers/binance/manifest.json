@@ -1,0 +1,17 @@
+{
+  "provider": {
+    "id": "binance",
+    "name": "Binance",
+    "description": "Managed Binance skills with built-in Agent Secrets support."
+  },
+  "skills": [
+    {
+      "id": "square-post",
+      "skill": "square-post",
+      "installSkillName": "square-post",
+      "name": "square-post",
+      "description": "Post content to Binance Square with Shift-managed authentication.",
+      "agentSecretsSupported": true
+    }
+  ]
+}

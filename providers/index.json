@@ -1,0 +1,10 @@
+{
+  "providers": [
+    {
+      "id": "binance",
+      "name": "Binance",
+      "description": "Managed Binance skills with built-in Agent Secrets support.",
+      "manifestPath": "providers/binance/manifest.json"
+    }
+  ]
+}
