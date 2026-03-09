@@ -1,0 +1,27 @@
+{
+  "provider": "binance",
+  "skill": "square-post",
+  "name": "square-post",
+  "description": "Post content to Binance Square with Shift-managed authentication.",
+  "installSkillIds": [
+    "tryshift-sh/skills-store/binance/square-post"
+  ],
+  "actions": {
+    "create": {
+      "slotName": "square-open-api",
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://www.binance.com",
+        "path": "/bapi/composite/v1/public/pgc/openApi/content/add",
+        "headers": {
+          "clienttype": "binanceSkill"
+        },
+        "auth": {
+          "mode": "header",
+          "headerName": "X-Square-OpenAPI-Key"
+        }
+      },
+      "inputTransform": "binance-square-post-create"
+    }
+  }
+}

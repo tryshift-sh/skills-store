@@ -1,0 +1,58 @@
+{
+  "provider": {
+    "id": "twitter",
+    "name": "Twitter / X",
+    "description": "Managed Twitter / X skills with built-in Agent Secrets support."
+  },
+  "skills": [
+    {
+      "id": "post",
+      "skill": "post",
+      "installSkillName": "post",
+      "name": "post",
+      "description": "Post, reply, quote, and delete tweets on Twitter / X.",
+      "agentSecretsSupported": true,
+      "skillRouterManifestPath": "providers/twitter/post/skill-router.json"
+    },
+    {
+      "id": "like",
+      "skill": "like",
+      "installSkillName": "post",
+      "name": "like",
+      "description": "Like and unlike tweets.",
+      "agentSecretsSupported": true,
+      "listedInStore": false,
+      "skillRouterManifestPath": "providers/twitter/like/skill-router.json"
+    },
+    {
+      "id": "retweet",
+      "skill": "retweet",
+      "installSkillName": "post",
+      "name": "retweet",
+      "description": "Retweet and unretweet tweets.",
+      "agentSecretsSupported": true,
+      "listedInStore": false,
+      "skillRouterManifestPath": "providers/twitter/retweet/skill-router.json"
+    },
+    {
+      "id": "timeline",
+      "skill": "timeline",
+      "installSkillName": "post",
+      "name": "timeline",
+      "description": "Read home timeline, user tweets, and mentions.",
+      "agentSecretsSupported": true,
+      "listedInStore": false,
+      "skillRouterManifestPath": "providers/twitter/timeline/skill-router.json"
+    },
+    {
+      "id": "user",
+      "skill": "user",
+      "installSkillName": "post",
+      "name": "user",
+      "description": "Retrieve the authenticated Twitter user profile.",
+      "agentSecretsSupported": true,
+      "listedInStore": false,
+      "skillRouterManifestPath": "providers/twitter/user/skill-router.json"
+    }
+  ]
+}

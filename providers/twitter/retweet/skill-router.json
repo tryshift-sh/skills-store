@@ -1,0 +1,32 @@
+{
+  "provider": "twitter",
+  "skill": "retweet",
+  "name": "retweet",
+  "description": "Retweet and unretweet tweets.",
+  "installSkillIds": [
+    "tryshift-sh/skills-store/twitter/post"
+  ],
+  "actions": {
+    "create": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/retweets",
+        "auth": { "mode": "bearer" }
+      },
+      "inputTransform": "twitter-retweet-create",
+      "outputTransform": "twitter-retweet-result"
+    },
+    "delete": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "DELETE",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/retweets/{tweetId}",
+        "auth": { "mode": "bearer" }
+      },
+      "outputTransform": "twitter-unretweet-result"
+    }
+  }
+}

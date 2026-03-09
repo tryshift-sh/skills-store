@@ -1,0 +1,41 @@
+{
+  "provider": "twitter",
+  "skill": "timeline",
+  "name": "timeline",
+  "description": "Read home timeline, user tweets, and mentions.",
+  "installSkillIds": [
+    "tryshift-sh/skills-store/twitter/post"
+  ],
+  "actions": {
+    "home": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/timelines/reverse_chronological",
+        "auth": { "mode": "bearer" }
+      },
+      "outputTransform": "twitter-timeline"
+    },
+    "user-tweets": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/tweets",
+        "auth": { "mode": "bearer" }
+      },
+      "outputTransform": "twitter-timeline"
+    },
+    "mentions": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/mentions",
+        "auth": { "mode": "bearer" }
+      },
+      "outputTransform": "twitter-timeline"
+    }
+  }
+}

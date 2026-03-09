@@ -11,7 +11,8 @@
       "installSkillName": "square-post",
       "name": "square-post",
       "description": "Post content to Binance Square with Shift-managed authentication.",
-      "agentSecretsSupported": true
+      "agentSecretsSupported": true,
+      "skillRouterManifestPath": "providers/binance/square-post/skill-router.json"
     }
   ]
 }

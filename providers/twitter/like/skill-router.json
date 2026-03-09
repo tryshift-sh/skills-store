@@ -1,0 +1,32 @@
+{
+  "provider": "twitter",
+  "skill": "like",
+  "name": "like",
+  "description": "Like and unlike tweets.",
+  "installSkillIds": [
+    "tryshift-sh/skills-store/twitter/post"
+  ],
+  "actions": {
+    "create": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/likes",
+        "auth": { "mode": "bearer" }
+      },
+      "inputTransform": "twitter-like-create",
+      "outputTransform": "twitter-like-result"
+    },
+    "delete": {
+      "slotName": "twitter-oauth",
+      "upstream": {
+        "method": "DELETE",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/likes/{tweetId}",
+        "auth": { "mode": "bearer" }
+      },
+      "outputTransform": "twitter-unlike-result"
+    }
+  }
+}
