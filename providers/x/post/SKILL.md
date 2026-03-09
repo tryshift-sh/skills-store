@@ -1,3 +1,12 @@
+---
+name: post
+description: |
+  Post, reply, quote, and delete posts on X through Shift's Skill Router.
+metadata:
+  author: shift
+  version: "1.0"
+---
+
 # X Post
 
 Use this managed skill when the user wants to post on X, reply to a post, quote a post, or delete a post.

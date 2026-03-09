@@ -1,3 +1,12 @@
+---
+name: user
+description: |
+  Retrieve the authenticated X user profile through Shift's Skill Router.
+metadata:
+  author: shift
+  version: "1.0"
+---
+
 # X User
 
 Use this managed skill for retrieving the authenticated X account profile through Shift.

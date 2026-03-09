@@ -1,3 +1,12 @@
+---
+name: like
+description: |
+  Like and unlike posts on X through Shift's Skill Router.
+metadata:
+  author: shift
+  version: "1.0"
+---
+
 # X Like
 
 Use this managed skill for liking and unliking posts on X through Shift.

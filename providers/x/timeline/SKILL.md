@@ -1,3 +1,12 @@
+---
+name: timeline
+description: |
+  Read home timeline, mentions, and user posts on X through Shift's Skill Router.
+metadata:
+  author: shift
+  version: "1.0"
+---
+
 # X Timeline
 
 Use this managed skill for reading X timelines and mentions through Shift.

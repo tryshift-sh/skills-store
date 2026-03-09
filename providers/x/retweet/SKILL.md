@@ -1,3 +1,12 @@
+---
+name: retweet
+description: |
+  Repost and undo reposts on X through Shift's Skill Router.
+metadata:
+  author: shift
+  version: "1.0"
+---
+
 # X Repost
 
 Use this managed skill for reposting and undoing reposts on X through Shift.
