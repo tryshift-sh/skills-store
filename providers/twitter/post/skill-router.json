@@ -2,7 +2,7 @@
   "provider": "twitter",
   "skill": "post",
   "name": "post",
-  "description": "Post, reply, quote, and delete tweets on Twitter / X.",
+  "description": "Post, reply, quote, and delete posts on X.",
   "installSkillId": "tryshift-sh/skills-store/twitter/post",
   "actions": {
     "create": {

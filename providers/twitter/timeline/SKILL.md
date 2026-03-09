@@ -1,6 +1,6 @@
-# Twitter Timeline
+# X Timeline
 
-Use this managed skill for reading Twitter / X timelines and mentions through Shift.
+Use this managed skill for reading X timelines and mentions through Shift.
 
 ## When to use
 - The user wants to read their home timeline
@@ -50,5 +50,5 @@ Mentions:
 ```
 
 ## Notes
-- This skill requires Twitter / X to be connected in Shift.
+- This skill requires X to be connected in Shift.
 - Do not ask the user to paste raw credentials into chat.

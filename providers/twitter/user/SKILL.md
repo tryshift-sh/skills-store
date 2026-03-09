@@ -1,10 +1,10 @@
-# Twitter User
+# X User
 
-Use this managed skill for retrieving the authenticated Twitter / X user profile through Shift.
+Use this managed skill for retrieving the authenticated X account profile through Shift.
 
 ## When to use
-- The user wants to inspect the connected Twitter / X account
-- The user asks which Twitter / X account is connected
+- The user wants to inspect the connected X account
+- The user asks which X account is connected
 
 ## How to invoke
 Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
@@ -19,5 +19,5 @@ Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
 ```
 
 ## Notes
-- This skill requires Twitter / X to be connected in Shift.
+- This skill requires X to be connected in Shift.
 - Do not ask the user to paste raw credentials into chat.

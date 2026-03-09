@@ -1,10 +1,10 @@
-# Twitter Retweet
+# X Repost
 
-Use this managed skill for retweeting and undoing retweets on Twitter / X through Shift.
+Use this managed skill for reposting and undoing reposts on X through Shift.
 
 ## When to use
-- The user wants to retweet a tweet
-- The user wants to undo a retweet
+- The user wants to repost a post
+- The user wants to undo a repost
 
 ## How to invoke
 Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
@@ -21,7 +21,7 @@ Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
 }
 ```
 
-To undo a retweet, use:
+To undo a repost, use:
 
 ```json
 {
@@ -36,5 +36,5 @@ To undo a retweet, use:
 ```
 
 ## Notes
-- This skill requires Twitter / X to be connected in Shift.
+- This skill requires X to be connected in Shift.
 - Do not ask the user to paste raw credentials into chat.

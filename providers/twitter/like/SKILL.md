@@ -1,6 +1,6 @@
-# Twitter Like
+# X Like
 
-Use this managed skill for liking and unliking tweets on Twitter / X through Shift.
+Use this managed skill for liking and unliking posts on X through Shift.
 
 ## When to use
 - The user wants to like a tweet
@@ -36,5 +36,5 @@ For removing a like, use:
 ```
 
 ## Notes
-- This skill requires Twitter / X to be connected in Shift.
+- This skill requires X to be connected in Shift.
 - Do not ask the user to paste raw credentials into chat.

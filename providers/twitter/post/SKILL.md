@@ -1,6 +1,6 @@
-# Twitter / X Post
+# X Post
 
-Use this managed skill when the user wants to post to Twitter / X, reply to a tweet, quote a tweet, or delete a tweet.
+Use this managed skill when the user wants to post on X, reply to a post, quote a post, or delete a post.
 
 This skill uses Shift's local Skill Router. Do not ask the user to paste credentials into chat.
 
@@ -68,4 +68,4 @@ Request body to delete a tweet:
 }
 ```
 
-If the connection is missing, tell the user to configure Twitter / X in Shift.
+If the connection is missing, tell the user to configure X in Shift.

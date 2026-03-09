@@ -1,8 +1,8 @@
 {
   "provider": {
     "id": "twitter",
-    "name": "Twitter / X",
-    "description": "Managed Twitter / X skills with built-in Agent Secrets support."
+    "name": "X",
+    "description": "Managed X skills with built-in Agent Secrets support."
   },
   "skills": [
     {
@@ -10,7 +10,7 @@
       "skill": "post",
       "installSkillName": "post",
       "name": "post",
-      "description": "Post, reply, quote, and delete tweets on Twitter / X.",
+      "description": "Post, reply, quote, and delete posts on X.",
       "agentSecretsSupported": true,
       "skillRouterManifestPath": "providers/twitter/post/skill-router.json"
     },
@@ -49,7 +49,7 @@
       "skill": "user",
       "installSkillName": "user",
       "name": "user",
-      "description": "Retrieve the authenticated Twitter user profile.",
+      "description": "Retrieve the authenticated X account profile.",
       "agentSecretsSupported": true,
       "listedInStore": false,
       "skillRouterManifestPath": "providers/twitter/user/skill-router.json"
