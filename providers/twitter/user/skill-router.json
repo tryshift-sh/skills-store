@@ -3,9 +3,7 @@
   "skill": "user",
   "name": "user",
   "description": "Retrieve the authenticated Twitter user profile.",
-  "installSkillIds": [
-    "tryshift-sh/skills-store/twitter/post"
-  ],
+  "installSkillId": "tryshift-sh/skills-store/twitter/user",
   "actions": {
     "me": {
       "slotName": "twitter-oauth",

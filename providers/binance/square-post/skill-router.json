@@ -3,9 +3,7 @@
   "skill": "square-post",
   "name": "square-post",
   "description": "Post content to Binance Square with Shift-managed authentication.",
-  "installSkillIds": [
-    "tryshift-sh/skills-store/binance/square-post"
-  ],
+  "installSkillId": "tryshift-sh/skills-store/binance/square-post",
   "actions": {
     "create": {
       "slotName": "square-open-api",

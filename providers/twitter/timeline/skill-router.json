@@ -3,9 +3,7 @@
   "skill": "timeline",
   "name": "timeline",
   "description": "Read home timeline, user tweets, and mentions.",
-  "installSkillIds": [
-    "tryshift-sh/skills-store/twitter/post"
-  ],
+  "installSkillId": "tryshift-sh/skills-store/twitter/timeline",
   "actions": {
     "home": {
       "slotName": "twitter-oauth",

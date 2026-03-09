@@ -3,9 +3,7 @@
   "skill": "retweet",
   "name": "retweet",
   "description": "Retweet and unretweet tweets.",
-  "installSkillIds": [
-    "tryshift-sh/skills-store/twitter/post"
-  ],
+  "installSkillId": "tryshift-sh/skills-store/twitter/retweet",
   "actions": {
     "create": {
       "slotName": "twitter-oauth",

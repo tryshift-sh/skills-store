@@ -17,7 +17,7 @@
     {
       "id": "like",
       "skill": "like",
-      "installSkillName": "post",
+      "installSkillName": "like",
       "name": "like",
       "description": "Like and unlike tweets.",
       "agentSecretsSupported": true,
@@ -27,7 +27,7 @@
     {
       "id": "retweet",
       "skill": "retweet",
-      "installSkillName": "post",
+      "installSkillName": "retweet",
       "name": "retweet",
       "description": "Retweet and unretweet tweets.",
       "agentSecretsSupported": true,
@@ -37,7 +37,7 @@
     {
       "id": "timeline",
       "skill": "timeline",
-      "installSkillName": "post",
+      "installSkillName": "timeline",
       "name": "timeline",
       "description": "Read home timeline, user tweets, and mentions.",
       "agentSecretsSupported": true,
@@ -47,7 +47,7 @@
     {
       "id": "user",
       "skill": "user",
-      "installSkillName": "post",
+      "installSkillName": "user",
       "name": "user",
       "description": "Retrieve the authenticated Twitter user profile.",
       "agentSecretsSupported": true,

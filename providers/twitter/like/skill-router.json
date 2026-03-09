@@ -3,9 +3,7 @@
   "skill": "like",
   "name": "like",
   "description": "Like and unlike tweets.",
-  "installSkillIds": [
-    "tryshift-sh/skills-store/twitter/post"
-  ],
+  "installSkillId": "tryshift-sh/skills-store/twitter/like",
   "actions": {
     "create": {
       "slotName": "twitter-oauth",

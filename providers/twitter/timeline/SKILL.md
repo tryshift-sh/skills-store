@@ -1,0 +1,54 @@
+# Twitter Timeline
+
+Use this managed skill for reading Twitter / X timelines and mentions through Shift.
+
+## When to use
+- The user wants to read their home timeline
+- The user wants to read a user's tweets
+- The user wants to read mentions
+
+## How to invoke
+Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke`.
+
+Home timeline:
+
+```json
+{
+  "skillProvider": "twitter",
+  "skill": "timeline",
+  "action": "home",
+  "input": {
+    "userId": "123"
+  }
+}
+```
+
+User tweets:
+
+```json
+{
+  "skillProvider": "twitter",
+  "skill": "timeline",
+  "action": "user-tweets",
+  "input": {
+    "userId": "123"
+  }
+}
+```
+
+Mentions:
+
+```json
+{
+  "skillProvider": "twitter",
+  "skill": "timeline",
+  "action": "mentions",
+  "input": {
+    "userId": "123"
+  }
+}
+```
+
+## Notes
+- This skill requires Twitter / X to be connected in Shift.
+- Do not ask the user to paste raw credentials into chat.
