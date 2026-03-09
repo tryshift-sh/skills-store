@@ -1,18 +1,18 @@
-# X Like
+# X Repost
 
-Use this managed skill for liking and unliking posts on X through Shift.
+Use this managed skill for reposting and undoing reposts on X through Shift.
 
 ## When to use
-- The user wants to like a tweet
-- The user wants to unlike a tweet they previously liked
+- The user wants to repost a post
+- The user wants to undo a repost
 
 ## How to invoke
 Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
 
 ```json
 {
-  "skillProvider": "twitter",
-  "skill": "like",
+  "skillProvider": "x",
+  "skill": "retweet",
   "action": "create",
   "input": {
     "userId": "123",
@@ -21,12 +21,12 @@ Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
 }
 ```
 
-For removing a like, use:
+To undo a repost, use:
 
 ```json
 {
-  "skillProvider": "twitter",
-  "skill": "like",
+  "skillProvider": "x",
+  "skill": "retweet",
   "action": "delete",
   "input": {
     "userId": "123",

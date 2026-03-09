@@ -18,7 +18,7 @@ Request body for a new tweet:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "post",
   "action": "create",
   "input": {
@@ -31,7 +31,7 @@ Request body for a reply:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "post",
   "action": "reply",
   "input": {
@@ -45,7 +45,7 @@ Request body for a quote tweet:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "post",
   "action": "quote",
   "input": {
@@ -59,7 +59,7 @@ Request body to delete a tweet:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "post",
   "action": "delete",
   "input": {

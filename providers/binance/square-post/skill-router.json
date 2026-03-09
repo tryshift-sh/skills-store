@@ -19,7 +19,18 @@
           "headerName": "X-Square-OpenAPI-Key"
         }
       },
-      "inputTransform": "binance-square-post-create"
+      "input": {
+        "bodyTemplate": {
+          "bodyTextOnly": "$input.text"
+        }
+      },
+      "output": {
+        "responseSelect": "data",
+        "responseMap": {
+          "id": "$data.contentId",
+          "text": "$data.bodyTextOnly"
+        }
+      }
     }
   }
 }

@@ -1,0 +1,50 @@
+{
+  "provider": "x",
+  "skill": "like",
+  "name": "like",
+  "description": "Like and unlike tweets.",
+  "installSkillId": "tryshift-sh/skills-store/x/like",
+  "actions": {
+    "create": {
+      "slotName": "x-oauth",
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/likes",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "bodyTemplate": {
+          "tweet_id": "$input.tweetId"
+        }
+      },
+      "output": {
+        "responseSelect": "data",
+        "responseMap": {
+          "liked": {
+            "$value": "$data.liked",
+            "$default": false
+          }
+        }
+      }
+    },
+    "delete": {
+      "slotName": "x-oauth",
+      "upstream": {
+        "method": "DELETE",
+        "baseUrl": "https://api.x.com",
+        "path": "/2/users/{userId}/likes/{tweetId}",
+        "auth": { "mode": "bearer" }
+      },
+      "output": {
+        "responseSelect": "data",
+        "responseMap": {
+          "liked": {
+            "$not": "$data.liked",
+            "$default": true
+          }
+        }
+      }
+    }
+  }
+}

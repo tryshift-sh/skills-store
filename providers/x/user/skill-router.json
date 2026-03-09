@@ -1,19 +1,26 @@
 {
-  "provider": "twitter",
+  "provider": "x",
   "skill": "user",
   "name": "user",
   "description": "Retrieve the authenticated X account profile.",
-  "installSkillId": "tryshift-sh/skills-store/twitter/user",
+  "installSkillId": "tryshift-sh/skills-store/x/user",
   "actions": {
     "me": {
-      "slotName": "twitter-oauth",
+      "slotName": "x-oauth",
       "upstream": {
         "method": "GET",
         "baseUrl": "https://api.x.com",
         "path": "/2/users/me",
         "auth": { "mode": "bearer" }
       },
-      "outputTransform": "twitter-user-me"
+      "output": {
+        "responseSelect": "data",
+        "responseMap": {
+          "id": "$data.id",
+          "name": "$data.name",
+          "username": "$data.username"
+        }
+      }
     }
   }
 }

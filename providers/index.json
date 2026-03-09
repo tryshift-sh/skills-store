@@ -7,10 +7,10 @@
       "manifestPath": "providers/binance/manifest.json"
     },
     {
-      "id": "twitter",
-      "name": "Twitter / X",
-      "description": "Managed Twitter / X skills with built-in Agent Secrets support.",
-      "manifestPath": "providers/twitter/manifest.json"
+      "id": "x",
+      "name": "X",
+      "description": "Managed X skills with built-in Agent Secrets support.",
+      "manifestPath": "providers/x/manifest.json"
     }
   ]
 }

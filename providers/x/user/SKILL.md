@@ -11,7 +11,7 @@ Send a `POST` request to `${SHIFT_LOCAL_GATEWAY}/skill-router/invoke` with:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "user",
   "action": "me",
   "input": {}

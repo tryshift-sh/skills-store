@@ -14,7 +14,7 @@ Home timeline:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "timeline",
   "action": "home",
   "input": {
@@ -27,7 +27,7 @@ User tweets:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "timeline",
   "action": "user-tweets",
   "input": {
@@ -40,7 +40,7 @@ Mentions:
 
 ```json
 {
-  "skillProvider": "twitter",
+  "skillProvider": "x",
   "skill": "timeline",
   "action": "mentions",
   "input": {

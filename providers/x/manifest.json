@@ -1,6 +1,6 @@
 {
   "provider": {
-    "id": "twitter",
+    "id": "x",
     "name": "X",
     "description": "Managed X skills with built-in Agent Secrets support."
   },
@@ -12,37 +12,37 @@
       "name": "post",
       "description": "Post, reply, quote, and delete posts on X.",
       "agentSecretsSupported": true,
-      "skillRouterManifestPath": "providers/twitter/post/skill-router.json"
+      "skillRouterManifestPath": "providers/x/post/skill-router.json"
     },
     {
       "id": "like",
       "skill": "like",
       "installSkillName": "like",
       "name": "like",
-      "description": "Like and unlike tweets.",
+      "description": "Like and unlike posts on X.",
       "agentSecretsSupported": true,
       "listedInStore": false,
-      "skillRouterManifestPath": "providers/twitter/like/skill-router.json"
+      "skillRouterManifestPath": "providers/x/like/skill-router.json"
     },
     {
       "id": "retweet",
       "skill": "retweet",
       "installSkillName": "retweet",
       "name": "retweet",
-      "description": "Retweet and unretweet tweets.",
+      "description": "Repost and undo reposts on X.",
       "agentSecretsSupported": true,
       "listedInStore": false,
-      "skillRouterManifestPath": "providers/twitter/retweet/skill-router.json"
+      "skillRouterManifestPath": "providers/x/retweet/skill-router.json"
     },
     {
       "id": "timeline",
       "skill": "timeline",
       "installSkillName": "timeline",
       "name": "timeline",
-      "description": "Read home timeline, user tweets, and mentions.",
+      "description": "Read home timeline, user posts, and mentions on X.",
       "agentSecretsSupported": true,
       "listedInStore": false,
-      "skillRouterManifestPath": "providers/twitter/timeline/skill-router.json"
+      "skillRouterManifestPath": "providers/x/timeline/skill-router.json"
     },
     {
       "id": "user",
@@ -52,7 +52,7 @@
       "description": "Retrieve the authenticated X account profile.",
       "agentSecretsSupported": true,
       "listedInStore": false,
-      "skillRouterManifestPath": "providers/twitter/user/skill-router.json"
+      "skillRouterManifestPath": "providers/x/user/skill-router.json"
     }
   ]
 }
