@@ -2,6 +2,8 @@
 
 Skills Store is Shift's official repository for managed skills.
 
+See [Skill-Spec.md](./Skill-Spec.md) for the full contract for adding a new managed skill.
+
 ## Repository structure
 
 - `providers/`
