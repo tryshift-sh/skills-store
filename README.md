@@ -27,11 +27,13 @@ The repository root contains:
 ## Current providers
 
 - `binance`
+- `twelve-data`
 - `x`
 
 ## Current managed skills
 
 - `providers/binance/square-post`
+- `providers/twelve-data/time-series`
 - `providers/x/post`
 - `providers/x/like`
 - `providers/x/retweet`

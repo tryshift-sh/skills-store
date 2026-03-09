@@ -7,6 +7,12 @@
       "manifestPath": "providers/binance/manifest.json"
     },
     {
+      "id": "twelve-data",
+      "name": "Twelve Data",
+      "description": "Managed Twelve Data skills with built-in Agent Secrets support.",
+      "manifestPath": "providers/twelve-data/manifest.json"
+    },
+    {
       "id": "x",
       "name": "X",
       "description": "Managed X skills with built-in Agent Secrets support.",

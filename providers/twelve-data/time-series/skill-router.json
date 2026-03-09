@@ -1,0 +1,36 @@
+{
+  "provider": "twelve-data",
+  "skill": "time-series",
+  "name": "time-series",
+  "description": "Fetch intraday and historical time series data from Twelve Data.",
+  "installSkillId": "tryshift-sh/skills-store/twelve-data/time-series",
+  "actions": {
+    "get": {
+      "slotName": "twelve-data-api-key",
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://api.twelvedata.com",
+        "path": "/time_series",
+        "auth": {
+          "mode": "query",
+          "queryParam": "apikey"
+        }
+      },
+      "input": {
+        "queryTemplate": {
+          "symbol": "$input.symbol",
+          "interval": "$input.interval",
+          "outputsize": "$input.outputsize",
+          "timezone": "$input.timezone",
+          "start_date": "$input.startDate",
+          "end_date": "$input.endDate",
+          "exchange": "$input.exchange",
+          "country": "$input.country",
+          "type": "$input.type",
+          "dp": "$input.dp",
+          "order": "$input.order"
+        }
+      }
+    }
+  }
+}

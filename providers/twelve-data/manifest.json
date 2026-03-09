@@ -1,0 +1,18 @@
+{
+  "provider": {
+    "id": "twelve-data",
+    "name": "Twelve Data",
+    "description": "Managed Twelve Data skills with built-in Agent Secrets support."
+  },
+  "skills": [
+    {
+      "id": "time-series",
+      "skill": "time-series",
+      "installSkillName": "time-series",
+      "name": "time-series",
+      "description": "Fetch intraday and historical time series data from Twelve Data.",
+      "agentSecretsSupported": true,
+      "skillRouterManifestPath": "providers/twelve-data/time-series/skill-router.json"
+    }
+  ]
+}
