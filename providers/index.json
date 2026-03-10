@@ -7,6 +7,12 @@
       "manifestPath": "providers/amazon/manifest.json"
     },
     {
+      "id": "firecrawl",
+      "name": "Firecrawl",
+      "description": "Managed Firecrawl skills with built-in Agent Secrets support.",
+      "manifestPath": "providers/firecrawl/manifest.json"
+    },
+    {
       "id": "binance",
       "name": "Binance",
       "description": "Managed Binance skills with built-in Agent Secrets support.",
