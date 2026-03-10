@@ -1,0 +1,70 @@
+{
+  "provider": "amazon",
+  "skill": "search-product",
+  "name": "search-product",
+  "description": "Search Amazon products through RapidAPI.",
+  "installSkillId": "tryshift-sh/skills-store/amazon/search-product",
+  "actions": {
+    "search": {
+      "slotName": "amazon-rapidapi-key",
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://real-time-amazon-data.p.rapidapi.com",
+        "path": "/search",
+        "headers": {
+          "x-rapidapi-host": "real-time-amazon-data.p.rapidapi.com"
+        },
+        "auth": {
+          "mode": "header",
+          "headerName": "x-rapidapi-key"
+        }
+      },
+      "input": {
+        "queryTemplate": {
+          "query": "$input.query",
+          "page": "$input.page",
+          "country": "$input.country",
+          "sort_by": "$input.sortBy",
+          "product_condition": "$input.productCondition",
+          "is_prime": "$input.isPrime",
+          "deals_and_discounts": "$input.dealsAndDiscounts"
+        }
+      },
+      "output": {
+        "responseSelect": "data",
+        "responseMap": {
+          "status": "$response.status",
+          "requestId": "$response.request_id",
+          "query": "$response.parameters.query",
+          "page": "$response.parameters.page",
+          "country": "$data.country",
+          "domain": "$data.domain",
+          "totalProducts": "$data.total_products",
+          "count": {
+            "$length": "$data.products"
+          },
+          "products": {
+            "$each": "$data.products",
+            "map": {
+              "asin": "$item.asin",
+              "title": "$item.product_title",
+              "price": "$item.product_price",
+              "originalPrice": "$item.product_original_price",
+              "currency": "$item.currency",
+              "rating": "$item.product_star_rating",
+              "ratingsCount": "$item.product_num_ratings",
+              "url": "$item.product_url",
+              "photo": "$item.product_photo",
+              "isPrime": "$item.is_prime",
+              "isAmazonChoice": "$item.is_amazon_choice",
+              "isBestSeller": "$item.is_best_seller",
+              "badge": "$item.product_badge",
+              "salesVolume": "$item.sales_volume",
+              "delivery": "$item.delivery"
+            }
+          }
+        }
+      }
+    }
+  }
+}

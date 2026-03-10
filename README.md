@@ -26,12 +26,14 @@ The repository root contains:
 
 ## Current providers
 
+- `amazon`
 - `binance`
 - `twelve-data`
 - `x`
 
 ## Current managed skills
 
+- `providers/amazon/search-product`
 - `providers/binance/square-post`
 - `providers/twelve-data/time-series`
 - `providers/x/post`
