@@ -2,7 +2,24 @@
   "provider": {
     "id": "x",
     "name": "X",
-    "description": "Managed X skills with built-in Agent Secrets support."
+    "description": "Managed X skills with built-in Agent Secrets support.",
+    "oauth": {
+      "provider": "twitter",
+      "displayName": "X (Twitter)",
+      "description": "Connect your X account for posting, likes, retweets, and more.",
+      "authorizeUrl": "https://x.com/i/oauth2/authorize",
+      "tokenUrl": "https://api.x.com/2/oauth2/token",
+      "clientIdEnv": "TWITTER_CLIENT_ID",
+      "clientSecretEnv": "TWITTER_CLIENT_SECRET",
+      "scopes": ["tweet.read", "tweet.write", "users.read", "like.write", "offline.access"],
+      "usePKCE": true,
+      "userInfo": {
+        "url": "https://api.x.com/2/users/me",
+        "accountIdPath": "data.id",
+        "accountNamePath": "data.username",
+        "accountNamePrefix": "@"
+      }
+    }
   },
   "skills": [
     {
