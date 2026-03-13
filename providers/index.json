@@ -1,0 +1,13 @@
+{
+  "providers": [
+    { "id": "x" },
+    { "id": "gmail" },
+    { "id": "google-calendar" },
+    { "id": "google-docs" },
+    { "id": "google-drive" },
+    { "id": "google-sheets" },
+    { "id": "todoist" },
+    { "id": "binance-square" },
+    { "id": "firecrawl" }
+  ]
+}

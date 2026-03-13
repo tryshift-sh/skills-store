@@ -1,0 +1,33 @@
+{
+  "provider": {
+    "id": "todoist",
+    "name": "Todoist",
+    "description": "List, create, update, and complete tasks in Todoist.",
+    "oauth": {
+      "provider": "todoist",
+      "displayName": "Todoist",
+      "description": "Connect Todoist to manage tasks, update work in progress, and complete tasks from Shift.",
+      "authorizeUrl": "https://app.todoist.com/oauth/authorize",
+      "tokenUrl": "https://api.todoist.com/oauth/access_token",
+      "clientIdEnv": "SKILL_ROUTER_OAUTH_TODOIST_CLIENT_ID",
+      "clientSecretEnv": "SKILL_ROUTER_OAUTH_TODOIST_CLIENT_SECRET",
+      "scopes": ["data:read_write"],
+      "scopeSeparator": "comma",
+      "usePKCE": false,
+      "tokenClientAuth": "request_body",
+      "userInfo": {
+        "url": "https://api.todoist.com/api/v1/user",
+        "accountIdPath": "id",
+        "accountNamePath": "email",
+        "accountAvatarPath": "avatar_medium"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": "tasks",
+      "name": "Tasks",
+      "description": "List, create, update, and complete tasks in Todoist."
+    }
+  ]
+}

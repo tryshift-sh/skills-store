@@ -1,0 +1,218 @@
+{
+  "id": "files",
+  "name": "Files",
+  "description": "Browse files, upload content, inspect metadata, create folders, and manage sharing in Google Drive.",
+  "actions": {
+    "list": {
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://www.googleapis.com",
+        "path": "/drive/v3/files",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "queryTemplate": {
+          "q": "$input.query",
+          "pageSize": {
+            "$value": "$input.pageSize",
+            "$default": 10
+          },
+          "pageToken": "$input.pageToken",
+          "orderBy": "$input.orderBy",
+          "supportsAllDrives": true,
+          "includeItemsFromAllDrives": true,
+          "fields": "nextPageToken, files(id, name, mimeType, webViewLink, iconLink, modifiedTime, owners, parents, shared)"
+        }
+      },
+      "output": {
+        "responseMap": {
+          "count": {
+            "$length": "$response.files"
+          },
+          "nextPageToken": "$response.nextPageToken",
+          "items": {
+            "$each": "$response.files",
+            "map": {
+              "id": "$item.id",
+              "name": "$item.name",
+              "mimeType": "$item.mimeType",
+              "webViewLink": "$item.webViewLink",
+              "iconLink": "$item.iconLink",
+              "modifiedTime": "$item.modifiedTime",
+              "shared": "$item.shared",
+              "parents": "$item.parents",
+              "owners": {
+                "$each": "$item.owners",
+                "map": {
+                  "displayName": "$item.displayName",
+                  "emailAddress": "$item.emailAddress"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "get": {
+      "upstream": {
+        "method": "GET",
+        "baseUrl": "https://www.googleapis.com",
+        "path": "/drive/v3/files/{fileId}",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "queryTemplate": {
+          "supportsAllDrives": true,
+          "fields": "id, name, mimeType, description, webViewLink, webContentLink, iconLink, createdTime, modifiedTime, size, owners, parents, shared, permissions"
+        }
+      },
+      "output": {
+        "responseMap": {
+          "id": "$response.id",
+          "name": "$response.name",
+          "mimeType": "$response.mimeType",
+          "description": "$response.description",
+          "webViewLink": "$response.webViewLink",
+          "webContentLink": "$response.webContentLink",
+          "iconLink": "$response.iconLink",
+          "createdTime": "$response.createdTime",
+          "modifiedTime": "$response.modifiedTime",
+          "size": "$response.size",
+          "shared": "$response.shared",
+          "parents": "$response.parents",
+          "owners": {
+            "$each": "$response.owners",
+            "map": {
+              "displayName": "$item.displayName",
+              "emailAddress": "$item.emailAddress"
+            }
+          },
+          "permissions": {
+            "$each": "$response.permissions",
+            "map": {
+              "id": "$item.id",
+              "type": "$item.type",
+              "role": "$item.role",
+              "emailAddress": "$item.emailAddress",
+              "displayName": "$item.displayName"
+            }
+          }
+        }
+      }
+    },
+    "create-folder": {
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://www.googleapis.com",
+        "path": "/drive/v3/files",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "queryTemplate": {
+          "supportsAllDrives": true,
+          "fields": "id, name, mimeType, webViewLink, parents"
+        },
+        "bodyTemplate": {
+          "name": "$input.name",
+          "mimeType": "application/vnd.google-apps.folder",
+          "parents": {
+            "$each": "$input.parentIds",
+            "map": "$item"
+          }
+        }
+      },
+      "output": {
+        "responseMap": {
+          "id": "$response.id",
+          "name": "$response.name",
+          "mimeType": "$response.mimeType",
+          "webViewLink": "$response.webViewLink",
+          "parents": "$response.parents"
+        }
+      }
+    },
+    "upload": {
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://www.googleapis.com",
+        "path": "/upload/drive/v3/files",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "queryTemplate": {
+          "uploadType": "multipart",
+          "supportsAllDrives": true,
+          "fields": "id, name, mimeType, webViewLink, parents, size"
+        },
+        "multipartUpload": {
+          "filePath": "$input.filePath",
+          "fileName": "$input.name",
+          "mimeType": {
+            "$value": "$input.mimeType",
+            "$default": "application/octet-stream"
+          },
+          "metadata": {
+            "name": "$input.name",
+            "mimeType": {
+              "$value": "$input.targetMimeType",
+              "$default": {
+                "$value": "$input.mimeType",
+                "$default": "application/octet-stream"
+              }
+            },
+            "parents": {
+              "$each": "$input.parentIds",
+              "map": "$item"
+            },
+            "description": "$input.description"
+          }
+        }
+      },
+      "output": {
+        "responseMap": {
+          "id": "$response.id",
+          "name": "$response.name",
+          "mimeType": "$response.mimeType",
+          "webViewLink": "$response.webViewLink",
+          "parents": "$response.parents",
+          "size": "$response.size"
+        }
+      }
+    },
+    "share": {
+      "upstream": {
+        "method": "POST",
+        "baseUrl": "https://www.googleapis.com",
+        "path": "/drive/v3/files/{fileId}/permissions",
+        "auth": { "mode": "bearer" }
+      },
+      "input": {
+        "pathParams": {
+          "fileId": "$input.fileId"
+        },
+        "queryTemplate": {
+          "supportsAllDrives": true,
+          "sendNotificationEmail": {
+            "$value": "$input.sendNotificationEmail",
+            "$default": true
+          },
+          "fields": "id, type, role, emailAddress, displayName"
+        },
+        "bodyTemplate": {
+          "type": "$input.type",
+          "role": "$input.role",
+          "emailAddress": "$input.emailAddress"
+        }
+      },
+      "output": {
+        "responseMap": {
+          "id": "$response.id",
+          "type": "$response.type",
+          "role": "$response.role",
+          "emailAddress": "$response.emailAddress",
+          "displayName": "$response.displayName"
+        }
+      }
+    }
+  }
+}
