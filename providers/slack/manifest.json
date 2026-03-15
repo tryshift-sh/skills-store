@@ -1,0 +1,50 @@
+{
+  "provider": {
+    "id": "slack",
+    "name": "Slack",
+    "description": "List channels, read messages, send messages, and manage reactions in Slack.",
+    "oauth": {
+      "provider": "slack",
+      "displayName": "Slack",
+      "description": "Connect Slack to read channels, send messages, and manage reactions.",
+      "authorizeUrl": "https://slack.com/oauth/v2/authorize",
+      "tokenUrl": "https://slack.com/api/oauth.v2.access",
+      "clientIdEnv": "SKILL_ROUTER_OAUTH_SLACK_CLIENT_ID",
+      "clientSecretEnv": "SKILL_ROUTER_OAUTH_SLACK_CLIENT_SECRET",
+      "scopes": [
+        "channels:read",
+        "channels:history",
+        "groups:read",
+        "groups:history",
+        "im:read",
+        "im:history",
+        "mpim:read",
+        "mpim:history",
+        "chat:write",
+        "users:read",
+        "reactions:read",
+        "reactions:write"
+      ],
+      "scopeSeparator": "comma",
+      "usePKCE": false,
+      "tokenClientAuth": "request_body",
+      "userInfo": {
+        "url": "https://slack.com/api/auth.test",
+        "accountIdPath": "team_id",
+        "accountNamePath": "team"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": "messaging",
+      "name": "Messaging",
+      "description": "List channels, read messages, send messages, reply in threads, and manage reactions in Slack."
+    },
+    {
+      "id": "users",
+      "name": "Users",
+      "description": "List workspace members and retrieve user profiles in Slack."
+    }
+  ]
+}
