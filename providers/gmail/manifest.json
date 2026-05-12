@@ -1,0 +1,42 @@
+{
+  "provider": {
+    "id": "gmail",
+    "name": "Gmail",
+    "description": "List threads, inspect messages, and send email through Gmail.",
+    "oauth": {
+      "provider": "gmail",
+      "displayName": "Gmail",
+      "description": "Connect Gmail to read threads and send email.",
+      "authorizeUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+      "tokenUrl": "https://oauth2.googleapis.com/token",
+      "clientIdEnv": "SKILL_ROUTER_OAUTH_GOOGLE_CLIENT_ID",
+      "clientSecretEnv": "SKILL_ROUTER_OAUTH_GOOGLE_CLIENT_SECRET",
+      "scopes": [
+        "openid",
+        "email",
+        "profile",
+        "https://www.googleapis.com/auth/gmail.modify"
+      ],
+      "usePKCE": true,
+      "authorizeParams": {
+        "access_type": "offline",
+        "include_granted_scopes": "true",
+        "prompt": "consent"
+      },
+      "tokenClientAuth": "request_body",
+      "userInfo": {
+        "url": "https://openidconnect.googleapis.com/v1/userinfo",
+        "accountIdPath": "sub",
+        "accountNamePath": "email",
+        "accountAvatarPath": "picture"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": "mail",
+      "name": "Mail",
+      "description": "List Gmail threads, inspect thread details, and send email."
+    }
+  ]
+}

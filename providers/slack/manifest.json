@@ -1,0 +1,60 @@
+{
+  "provider": {
+    "id": "slack",
+    "name": "Slack",
+    "description": "List channels, read messages, send messages, and manage reactions in Slack.",
+    "oauth": {
+      "provider": "slack",
+      "displayName": "Slack",
+      "description": "Connect Slack to read channels, send messages, and manage reactions.",
+      "authorizeUrl": "https://slack.com/oauth/v2/authorize",
+      "tokenUrl": "https://slack.com/api/oauth.v2.access",
+      "clientIdEnv": "SKILL_ROUTER_OAUTH_SLACK_CLIENT_ID",
+      "clientSecretEnv": "SKILL_ROUTER_OAUTH_SLACK_CLIENT_SECRET",
+      "userScopes": [
+        "channels:read",
+        "channels:history",
+        "groups:read",
+        "groups:history",
+        "im:read",
+        "im:history",
+        "mpim:read",
+        "mpim:history",
+        "chat:write",
+        "users:read",
+        "users:read.email",
+        "reactions:read",
+        "reactions:write"
+      ],
+      "scopeSeparator": "comma",
+      "usePKCE": false,
+      "tokenClientAuth": "request_body",
+      "tokenResponse": {
+        "successPath": "ok",
+        "errorPath": "error",
+        "accessTokenPath": "authed_user.access_token",
+        "refreshTokenPath": "authed_user.refresh_token",
+        "expiresInPath": "authed_user.expires_in",
+        "scopesPath": "authed_user.scope"
+      },
+      "userInfo": {
+        "url": "https://slack.com/api/auth.test",
+        "accountIdPath": "user_id",
+        "accountNamePath": "user",
+        "accountNamePrefix": "@"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": "messaging",
+      "name": "Messaging",
+      "description": "List channels, read messages, send messages, reply in threads, and manage reactions in Slack."
+    },
+    {
+      "id": "users",
+      "name": "Users",
+      "description": "List workspace members and retrieve user profiles in Slack."
+    }
+  ]
+}

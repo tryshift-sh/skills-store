@@ -1,0 +1,18 @@
+{
+  "provider": {
+    "id": "binance-square",
+    "name": "Binance Square",
+    "description": "Post content to Binance Square.",
+    "auth": {
+      "mode": "api_key",
+      "description": "Paste your Binance Square OpenAPI key."
+    }
+  },
+  "skills": [
+    {
+      "id": "square-post",
+      "name": "Square Post",
+      "description": "Post content to Binance Square."
+    }
+  ]
+}

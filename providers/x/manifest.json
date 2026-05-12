@@ -1,0 +1,51 @@
+{
+  "provider": {
+    "id": "x",
+    "name": "X",
+    "description": "Managed X skills for Shift.",
+    "oauth": {
+      "provider": "twitter",
+      "displayName": "X (Twitter)",
+      "description": "Connect your X account for posting, likes, retweets, and more.",
+      "authorizeUrl": "https://x.com/i/oauth2/authorize",
+      "tokenUrl": "https://api.x.com/2/oauth2/token",
+      "clientIdEnv": "SKILL_ROUTER_OAUTH_TWITTER_CLIENT_ID",
+      "clientSecretEnv": "SKILL_ROUTER_OAUTH_TWITTER_CLIENT_SECRET",
+      "scopes": ["tweet.read", "tweet.write", "users.read", "like.write", "offline.access"],
+      "usePKCE": true,
+      "userInfo": {
+        "url": "https://api.x.com/2/users/me",
+        "accountIdPath": "data.id",
+        "accountNamePath": "data.username",
+        "accountNamePrefix": "@"
+      }
+    }
+  },
+  "skills": [
+    {
+      "id": "post",
+      "name": "Post",
+      "description": "Post, reply, quote, and delete posts on X."
+    },
+    {
+      "id": "like",
+      "name": "Like",
+      "description": "Like and unlike posts on X."
+    },
+    {
+      "id": "retweet",
+      "name": "Retweet",
+      "description": "Repost and undo reposts on X."
+    },
+    {
+      "id": "timeline",
+      "name": "Timeline",
+      "description": "Read home timeline, user posts, and mentions on X."
+    },
+    {
+      "id": "user",
+      "name": "User Profile",
+      "description": "Retrieve the authenticated X account profile."
+    }
+  ]
+}

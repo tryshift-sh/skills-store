@@ -1,0 +1,14 @@
+{
+  "provider": {
+    "id": "e2b",
+    "name": "E2B",
+    "description": "Managed E2B live app skills for Shift."
+  },
+  "skills": [
+    {
+      "id": "web-app",
+      "name": "Web App",
+      "description": "Create or update a shareable live web app sandbox."
+    }
+  ]
+}
